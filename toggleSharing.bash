@@ -10,8 +10,9 @@ function help {
 	echo "Usage: $prog_name [-s] [-e]"
 	echo
 	echo "Options"
-	echo "    -s, --startsharing 		start dhcp and internet sharing with preconfigured settings"
-	echo "    -e, --endsharing    		end dhcp and interent sharing with preconfigured settings"
+	echo "		-s, --startsharing 					start dhcp and internet sharing with preconfigured settings"
+	echo "		-e, --endsharing    				end dhcp and interent sharing with preconfigured settings"
+	echo "		-c <address> --connect <address> 	use openconnect to connect to vpn with specified address (modify as needed for your org)"
 	echo
 	echo " 		to configure setting see <url> to edit bootp.plist and pf.conf (will maybe add programatic config at some point)"
 	echo "		Warning: starting dhcp internet sharing with improper configuration could have adverse effects on your network connection, proceed with caution"
@@ -44,6 +45,17 @@ function endsharing {
 }
 
 
+function connect {
+echo "Connecting to VPN"
+sudo openconnect --passwd-on-stdin $1
+sleep 1
+echo "\n"
+sleep 1
+echo "\n"
+echo "\n"
+}
+
+
 subcommand=$1
 case $subcommand in
 	"" | "-h" | "--help")
@@ -55,6 +67,10 @@ case $subcommand in
 	;;
 	"-e" | "--endsharing")
 	endsharing
+	;;
+	"-c" | "--connectVPN")
+	#pass vpn server address
+	connect $2
 	;;
 	*)
 	echo "Error: '$subcommand' is not a known command." >&2
