@@ -48,11 +48,7 @@ function endsharing {
 function connect {
 echo "Connecting to VPN"
 sudo openconnect --passwd-on-stdin $1
-sleep 1
-echo "\n"
-sleep 1
-echo "\n"
-echo "\n"
+
 }
 
 
