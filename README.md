@@ -26,7 +26,7 @@ toggleSharing.bash -e
 ```
 
 
-Installing
+## Installing
 
 Place script in your preferred location and add an alias in your shell profile if you wish.
 
