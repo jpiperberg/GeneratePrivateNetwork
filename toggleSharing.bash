@@ -1,21 +1,33 @@
 #!/bin/bash
 
-# This script starts and stops internet sharing on macOS using pfctl and bootps rather than built in internet sharing
+# This script starts and stops internet sharing on macOS using pfctl and bootps
+# rather than built in internet sharing
 
 prog_name=$(basename $0)
 
 
 function help {
-	echo "Usage: $prog_name [-s] [-e]"
-	echo
-	echo "Options"
-	echo "		-s, --startsharing 			start dhcp and internet sharing with preconfigured settings"
-	echo "		-e, --endsharing    			end dhcp and interent sharing with preconfigured settings"
-	echo "		-c <address> --connect <address> 	use openconnect to connect to vpn with specified address (modify as needed for your org)"
-	echo
-	echo " 		to configure setting see <url> to edit bootp.plist and pf.conf (will maybe add programatic config at some point)"
-	echo "		Warning: starting dhcp internet sharing with improper configuration could have adverse effects on your network connection, proceed with caution"
-	echo
+	cat << EOM
+
+Usage: $prog_name [-s] [-e]
+
+Options
+    -s, --startsharing
+        Start dhcp and internet sharing with preconfigured settings
+
+    -e, --endsharing
+        End dhcp and interent sharing with preconfigured settings
+
+    -c <address> --connect <address>
+        use openconnect to connect to vpn with specified address (modify as
+        needed for your organization)
+
+to configure setting see <url> to edit bootp.plist and pf.conf (will maybe
+add programatic config at some point)
+
+Warning: Starting dhcp internet sharing with improper configuration could have
+adverse effects on your network connection, proceed with caution
+EOM
 }
 
 function startsharing {
