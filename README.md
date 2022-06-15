@@ -9,17 +9,17 @@ GNU GPLv3
 
 ## Getting Started
 
-See Wiki (in development)
+See Wiki 
 
 ## Usage
 
 To start port forwarding and DHCP based on preconfigured /etc/bootpd.plist and /etc/pf.conf files
 
-toggleSharing.bash -s 
+```toggleSharing.bash -s 
 
 To stop sharing and DHCP:
 
-toggleSharing.bash -e
+```toggleSharing.bash -e
 
 
 Installing
