@@ -9,7 +9,7 @@ GNU GPLv3
 
 ## Getting Started
 
-See Wiki 
+See [Wiki](https://github.com/jpiperberg/GeneratePrivateNetwork/wiki) 
 
 ## Usage
 
