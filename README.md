@@ -15,11 +15,15 @@ See Wiki
 
 To start port forwarding and DHCP based on preconfigured /etc/bootpd.plist and /etc/pf.conf files
 
-```toggleSharing.bash -s 
+```sh
+toggleSharing.bash -s
+```
 
 To stop sharing and DHCP:
 
-```toggleSharing.bash -e
+```sh
+toggleSharing.bash -e 
+```
 
 
 Installing
